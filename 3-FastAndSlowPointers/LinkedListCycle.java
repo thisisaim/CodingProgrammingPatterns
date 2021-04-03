@@ -22,6 +22,10 @@ class ListNode {
         }
       return false;
     }
+
+
+    //Time Complexity O(n)
+    //Space Complexity O(1)
   
     public static void main(String[] args) {
       ListNode head = new ListNode(1);
