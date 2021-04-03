@@ -2,7 +2,7 @@ import java.util.Arrays;
 
 class AverageOfSubArrayOfSizeK{
     public static double[] findAverage(int k, int[] arr){
-        double[] result = new double[arr.length - K + 1];
+        double[] result = new double[arr.length - k + 1];
 
         return result;
     }
