@@ -32,6 +32,10 @@ class BinarySearch{
         }
         return -1;
     }
+
+    //Time Complexity O(log N), where N is the number of elelemnts in the array.
+    //Space Complexity O(1)
+    
     public static void main(String[] args){
         System.out.println(BinarySearch.search(new int[] {1, 2, 3, 4, 5, 4}));
     }
