@@ -1,3 +1,5 @@
+import java.util.PriorityQueue;
+
 class ListNode{
     int value;
     ListNode next;
@@ -21,7 +23,7 @@ class MergeKSortedLists{
         ListNode resultHead = null;
         ListNode resultTail = null;
 
-        whle(!minHeap.isEmpty()){
+        while(!minHeap.isEmpty()){
             ListNode node = minHeap.poll();
             if(resultHead == null){
                 resultTail = node;

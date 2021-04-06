@@ -1,3 +1,6 @@
+import java.util.List;
+import java.util.PriorityQueue;
+
 class KLargestNumbers{
     public static List<Integer> FindKLargestNumbers(int[] nums, int k){
         PriorityQueue<Integer> minHeap = new PriorityQueue<Integer>(a, b) -> (a[0] - b[0]);
@@ -10,7 +13,7 @@ class KLargestNumbers{
         for(int i = k; i < nums.length; i++){
             if(nums[i] > minHeap.peek()){
                 minHeap.poll();
-                minHeap.add(nums[i])
+                minHeap.add(nums[i]);
             }
         }
         return new ArrayList<>(minHeap);
@@ -18,10 +21,10 @@ class KLargestNumbers{
 //Time Complexity O(N LogK)
 //Space Complexity O(K)
     public static void main(String[] args) {
-        List<Integer> result = KLargestNumbers.findKLargestNumbers(new int[] { 3, 1, 5, 12, 2, 11 }, 3);
+        List<Integer> result = KLargestNumbers.FindKLargestNumbers(new int[] { 3, 1, 5, 12, 2, 11 }, 3);
         System.out.println("Here are the top K numbers: " + result);
     
-        result = KLargestNumbers.findKLargestNumbers(new int[] { 5, 12, 11, -1, 12 }, 3);
+        result = KLargestNumbers.FindKLargestNumbers(new int[] { 5, 12, 11, -1, 12 }, 3);
         System.out.println("Here are the top K numbers: " + result);
       }
 }
