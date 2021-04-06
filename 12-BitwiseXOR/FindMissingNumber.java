@@ -19,6 +19,6 @@ class MissingNumber{
     //Space Complexity O(1)
     
     public static void main(String[] args) {
-        int[] arr = new int{1, 5, 2, 6, 4};
+        int[] arr = new int {1, 5, 2, 6, 4};
     }
 }
