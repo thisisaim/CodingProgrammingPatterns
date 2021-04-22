@@ -16,7 +16,9 @@ class TopologicalSort {
 
     // b. Build the graph
     for (int i = 0; i < edges.length; i++) {
-      int parent = edges[i][0], child = edges[i][1];
+      int parent = edges[i][0];
+      int child = edges[i][1];
+      
       graph.get(parent).add(child); // put the child into it's parent's list
       inDegree.put(child, inDegree.get(child) + 1); // increment child's inDegree
     }
@@ -24,8 +26,9 @@ class TopologicalSort {
     // c. Find all sources i.e., all vertices with 0 in-degrees
     Queue<Integer> sources = new LinkedList<>();
     for (Map.Entry<Integer, Integer> entry : inDegree.entrySet()) {
-      if (entry.getValue() == 0)
-        sources.add(entry.getKey());
+      if (entry.getValue() == 0){
+          sources.add(entry.getKey());
+      }
     }
 
     // d. For each source, add it to the sortedOrder and subtract one from all of its children's in-degrees
@@ -36,13 +39,15 @@ class TopologicalSort {
       List<Integer> children = graph.get(vertex); // get the node's children to decrement their in-degrees
       for (int child : children) {
         inDegree.put(child, inDegree.get(child) - 1);
-        if (inDegree.get(child) == 0)
-          sources.add(child);
+        if (inDegree.get(child) == 0){
+            sources.add(child);
+        }
       }
     }
 
-    if (sortedOrder.size() != vertices) // topological sort is not possible as the graph has a cycle
-      return new ArrayList<>();
+    if (sortedOrder.size() != vertices){// topological sort is not possible as the graph has a cycle
+        return new ArrayList<>();
+    } 
 
     return sortedOrder;
   }
