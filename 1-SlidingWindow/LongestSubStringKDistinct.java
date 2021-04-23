@@ -22,7 +22,7 @@ class LongestSubStringKDistinct{
             }
             maxLength = Math.max(maxLength, windowEnd - windowStart + 1);
         }
-        return maxLength;
+        // return maxLength;
     }
 
     public static void main(String[] args) {
