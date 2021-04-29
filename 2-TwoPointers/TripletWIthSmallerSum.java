@@ -15,16 +15,18 @@ class TripletWIthSmallerSum{
         int left = first + 1;
         int right = arr.length - 1;
 
-        while(left < right){
-            if(arr[left] + arr[right] < targetSum){
-                count = count + right - left;
-                left++;
+        while (left < right) {
+            if (arr[left] + arr[right] < targetSum) { // found the triplet
+              // since arr[right] >= arr[left], therefore, we can replace arr[right] by any number between 
+              // left and right to get a sum less than the target sum
+              count += right - left;
+              left++;
+            } else {
+              right--; // we need a pair with a smaller sum
             }
-            else{
-                right--;
-            }
-        }
-        right--;
+          }
+          return count;
+
     }
     public static void main(String[] args) {
         System.out.println(TripletWithSmallerSum.searchTriplets(new int[] { -1, 0, 2, 3 }, 3));
