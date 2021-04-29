@@ -1,7 +1,7 @@
 import java.util.*;
 
 class TripletSumToZero{
-    pubic static List<List<Integer>> searchTriplets(int[] arr){
+    public static List<List<Integer>> searchTriplets(int[] arr){
         Arrays.sort(arr);
         List<List<Integer>> triplets = new ArrayList<>();
 
@@ -11,22 +11,23 @@ class TripletSumToZero{
             }
             searchPair(arr, -arr[i], i + 1, triplets);
         }
+        return triplets;
     }
 
-    pubic static void searchPair(int[] arr, int targetSum, int left, List<List<Integer>> triplets){
+    public static void searchPair(int[] arr, int targetSum, int left, List<List<Integer>> triplets){
         int right = arr.length - 1;
 
-        while(left < right{
+        while(left < right){
             int currentSum = arr[left] + arr[right];
             if(currentSum == targetSum){
                 triplets.add(Arrays.asList(-targetSum, arr[left], arr[right]));
                 left++;
                 right--;
                 
-                whle(left < right && arr[left] == arr[left - 1]){
+                while(left < right && arr[left] == arr[left - 1]){
                     left++;
                 }
-                whlie(left < right && arr[left] == arr[left + 1]){
+                while(left < right && arr[left] == arr[left + 1]){
                     right--;
                 }
             }
@@ -39,7 +40,7 @@ class TripletSumToZero{
         }
     }
 
-    public public static void main(String[] args) {
+    public static void main(String[] args) {
         System.out.println(TripletSumToZero.searchTriplets(new int[] {-3, 0, 1, 2, -1, 1, -2}));
         System.out.println(TripletSumToZero.searchTriplets(new int[] {-5, 2, -1, -2, 3}));
         
