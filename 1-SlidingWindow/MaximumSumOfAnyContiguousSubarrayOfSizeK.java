@@ -15,7 +15,7 @@ class MaximumSumSubArrayOfSizeK{
     public static int MaxSumSubArray(int[] arr, int k){
         int maxSum = 0;
         int windowSum =0;
-        int start = 0
+        int start = 0;
 
         for(int end = 0; end < arr.length; end++){
             windowSum = windowSum + arr[end];

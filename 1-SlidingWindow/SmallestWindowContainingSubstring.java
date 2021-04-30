@@ -18,7 +18,7 @@ class SmallestWindowContainingSubstring{
             char rightChar  = str.charAt(windowEnd);
 
             if(freqMap.containsKey(rightChar)){
-                freqMap.put(rightChar, freqMap.get(rightChar) - 1)
+                freqMap.put(rightChar, freqMap.get(rightChar) - 1);
                 if(freqMap.get(rightChar) >= 0){
                     matched++;
                 }
