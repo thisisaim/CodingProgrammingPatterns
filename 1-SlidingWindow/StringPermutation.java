@@ -43,7 +43,7 @@ class StringPermutation {
         Map<Character, Integer> freqMap = new HashMap<>();
 
         for(char c : pattern.toCharArray()){
-            map.put(c, freqMap.getOrDefault(c, 0) + 1);
+            freqMap.put(c, freqMap.getOrDefault(c, 0) + 1);
         }
 
         for(int windowEnd = 0; windowEnd < str.length(); windowEnd++){
@@ -59,7 +59,7 @@ class StringPermutation {
                 return true;
             }
 
-            if(windowEnd >= pattern.length - 1){
+            if(windowEnd >= pattern.length() - 1){
                 char leftChar = str.charAt(windowStart);
                 if(freqMap.containsKey(leftChar)){
                     if(freqMap.get(leftChar) == 0){
