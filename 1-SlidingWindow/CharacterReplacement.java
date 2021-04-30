@@ -15,7 +15,7 @@ class CharacterReplacement{
             
             if(windowEnd - windowStart + 1 - maxRepeatLetterCount > k){
                 char leftChar = str.charAt(windowStart);
-                freqMap.put(leftChar, freqMap.getOrDefault(leftChar) - 1);
+                freqMap.put(leftChar, freqMap.getOrDefault(leftChar, 0) - 1);
                 windowStart++;
             }
             maxLength = Math.max(maxLength, windowEnd - windowStart + 1);
