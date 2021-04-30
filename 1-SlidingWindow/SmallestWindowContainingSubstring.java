@@ -2,7 +2,7 @@ import java.util.*;
 
 class SmallestWindowContainingSubstring{
 
-    public static String FindSubString(String str, String pattern){
+    public static String findSubstring(String str, String pattern){
         int windowStart = 0;
         int matched = 0;
         int minLength = str.length() + 1;
@@ -32,18 +32,18 @@ class SmallestWindowContainingSubstring{
 
             char charLeft = str.charAt(windowStart++);
             if(freqMap.containsKey(charLeft)){
-                if(freqMap.get(leftChar) == 0){
+                if(freqMap.get(charLeft) == 0){
                     matched--;
                 }
-                freqMap.put(leftChar, freqMap.get(leftChar) + 1);
+                freqMap.put(charLeft, freqMap.get(charLeft) + 1);
             }
         }
         return minLength > str.length() ? "" : str.substring(subStrStart, subStrStart + minLength);
 
     }
     public static void main(String[] args) {
-        System.out.println(MinimumWindowSubstring.findSubstring("aabdec", "abc"));
-        System.out.println(MinimumWindowSubstring.findSubstring("abdbca", "abc"));
-        System.out.println(MinimumWindowSubstring.findSubstring("adcad", "abc"));
+        System.out.println(SmallestWindowContainingSubstring.findSubstring("aabdec", "abc"));
+        System.out.println(SmallestWindowContainingSubstring.findSubstring("abdbca", "abc"));
+        System.out.println(SmallestWindowContainingSubstring.findSubstring("adcad", "abc"));
     }
 }
