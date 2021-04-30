@@ -22,7 +22,7 @@ class SortedArraySquares{
     public static void main(String[] args) {
         int[] test = SortedArraySquares.makeSquares(new int[] {-2, -1, 0, 2, 3});
         for(int n : test){
-            System.out.print(num + " ");
+            System.out.print(n + " ");
         }
         System.out.println();
     }

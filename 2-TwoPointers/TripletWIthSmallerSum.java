@@ -1,6 +1,6 @@
 import java.util.*;
 
-class TripletWIthSmallerSum{
+class TripletWithSmallerSum{
     public static int searchTriplets(int[] arr, int target){
         Arrays.sort(arr);
         int count = 0;
