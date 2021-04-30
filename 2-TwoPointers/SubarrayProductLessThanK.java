@@ -6,7 +6,7 @@ class SubarrayProductLessThanK{
         int product = 1;
         int start =0;
 
-        for(int end = 0; i < arr.length; i++){
+        for(int end = 0; end < arr.length; end++){
             product = product * arr[end];
 
             List<Integer> tempList = new LinkedList<>();

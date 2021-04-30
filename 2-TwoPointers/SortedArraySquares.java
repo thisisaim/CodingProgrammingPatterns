@@ -1,4 +1,3 @@
-import java.util.*;
 
 class SortedArraySquares{
     public static int[] makeSquares(int [] arr){

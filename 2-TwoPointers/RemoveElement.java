@@ -1,4 +1,4 @@
-import java.util.*;
+
 
 class RemoveElement{
     public static int remove(int[] arr, int key){

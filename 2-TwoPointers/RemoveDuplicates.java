@@ -1,4 +1,4 @@
-import java.util.*;
+
 
 class RemoveDuplicates{
     public static int remove(int[] arr){
