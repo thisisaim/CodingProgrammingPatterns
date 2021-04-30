@@ -1,3 +1,5 @@
+import java.util.*;
+
 class LongestSubStringKDistinct{
     public static int findLength(String str, int k) {
         if(str.length() == 0 || str == null || str.length() < k){
@@ -5,12 +7,13 @@ class LongestSubStringKDistinct{
         }
         int windowStart = 0;
         int maxLength = 0;
+        int windowEnd;
 
-        Map<Integer, Integer> freqMap = new HashMap<>();
+        Map<Character, Integer> freqMap = new HashMap<>();
 
         for(windowEnd = 0; windowEnd < str.length(); windowEnd++){
             char rightChar = str.charAt(windowEnd);
-            freqMap.put(rightChar, freq.getOrDefault(rightChar, 0) + 1);
+            freqMap.put(rightChar, freqMap.getOrDefault(rightChar, 0) + 1);
 
             while(freqMap.size() > k){
                 char leftChar = str.charAt(windowStart);
@@ -22,12 +25,12 @@ class LongestSubStringKDistinct{
             }
             maxLength = Math.max(maxLength, windowEnd - windowStart + 1);
         }
-        // return maxLength;
+         return maxLength;
     }
 
     public static void main(String[] args) {
-        System.out.println("Length of the longest substring: " + LongestSubstringKDistinct.findLength("araaci", 2));
-        System.out.println("Length of the longest substring: " + LongestSubstringKDistinct.findLength("araaci", 1));
-        System.out.println("Length of the longest substring: " + LongestSubstringKDistinct.findLength("cbbebi", 3));
+        System.out.println("Length of the longest substring: " + LongestSubStringKDistinct.findLength("araaci", 2));
+        System.out.println("Length of the longest substring: " + LongestSubStringKDistinct.findLength("araaci", 1));
+        System.out.println("Length of the longest substring: " + LongestSubStringKDistinct.findLength("cbbebi", 3));
     }
 }
