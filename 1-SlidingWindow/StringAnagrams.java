@@ -53,11 +53,11 @@ class StringAnagrams{
             
             if (windowEnd >= pattern.length() - 1) { // shrink the window
             char leftChar = str.charAt(windowStart++);
-            if (charFrequencyMap.containsKey(leftChar)) {
-                if (charFrequencyMap.get(leftChar) == 0)
+            if (freqMap.containsKey(leftChar)) {
+                if (freqMap.get(leftChar) == 0)
                     matched--; // before putting the character back, decrement the matched count
                     // put the character back
-                    charFrequencyMap.put(leftChar, charFrequencyMap.get(leftChar) + 1);
+                    freqMap.put(leftChar, freqMap.get(leftChar) + 1);
                 }
             }
         }
