@@ -1,6 +1,4 @@
-import java.util.HashMap;
-import java.util.Map;
-
+import java.util.*;
 
 public class PairWithTargetSum {
     public static int[] search(int[] arr, int target){

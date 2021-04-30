@@ -1,4 +1,4 @@
-import java.util.Arrays;
+import java.util.*;
 
 class AverageOfSubArrayOfSizeK{
     public static double[] findAverage(int k, int[] arr){

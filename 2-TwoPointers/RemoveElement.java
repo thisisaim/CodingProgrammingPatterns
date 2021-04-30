@@ -1,3 +1,5 @@
+import java.util.*;
+
 class RemoveElement{
     public static int remove(int[] arr, int key){
         int j = 0;
@@ -11,12 +13,12 @@ class RemoveElement{
     }
 
     public static void main(String[] args) {
-        int[] test = new int{3, 2, 3, 6, 3, 10, 9, 3};
+        int[] test1 = new int[] {3, 2, 3, 6, 3, 10, 9, 3};
         int key1 = 3;
-        System.out.println(RemoveElement.remove(test, key1));
+        System.out.println(RemoveElement.remove(test1, key1));
 
-        int[] test = new int{ 2, 11, 2, 2, 1 };
-        int key1 = 2;
-        System.out.println(RemoveElement.remove(test, key1));
+        int[] test2 = new int[] { 2, 11, 2, 2, 1 };
+        int key2 = 2;
+        System.out.println(RemoveElement.remove(test2, key2));
     }
 }
