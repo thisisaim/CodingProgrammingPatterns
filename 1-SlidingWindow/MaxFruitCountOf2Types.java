@@ -9,7 +9,7 @@ class MaxFruitCountOf2Types{
         for(int windowEnd = 0; windowEnd < arr.length; windowEnd++){
             freqMap.put(arr[windowEnd], freqMap.getOrDefault(arr[windowEnd], 0) + 1);
 
-            while(freqMap.size < 2){
+            while(freqMap.size() < 2){
                 freqMap.put(arr[windowStart], freqMap.get(arr[windowStart]) - 1);
                 if(freqMap.get(arr[windowStart]) == 0){
                     freqMap.remove(arr[windowStart]);
