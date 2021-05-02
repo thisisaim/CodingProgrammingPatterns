@@ -42,6 +42,30 @@ class InsertInterval{
         return mergedIntervals;
     }
 
+    public static int[][] insert(int[][] intervals, int[] newInterval){
+        List<int[]> result = new ArrayList<>();
+        int[] toAdd = newInterval;
+
+        for(int i = 0; i < intervals.length; i++){
+        //No overlap and toAdd appears before current interval, add toAdd to result
+            if(intervals[i][0] > toAdd[1]){
+                result.add(toAdd);
+                toAdd = intervals[i];
+            }
+        
+        // Has overlap, update toAdd to the merged interval
+            else if(intervals[i][1] >= toAdd[0]){
+                toAdd = new int[]{Math.min(intervals[i][0], toAdd[0]), Math.max(intervals[i][1], toAdd[1])};
+            }
+            else{
+        //No overlap and toAdd appears after current interval, add current to result
+                result.add(intervals[i]);
+            }
+        }
+        result.add(toAdd);
+        return result.toArray(new int[result.size()][]);
+    }
+
     public static void main(String[] args){
         List<Interval> input = new ArrayList<>();
         input.add(new Interval(1,3));
