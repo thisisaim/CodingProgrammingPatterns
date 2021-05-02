@@ -1,6 +1,7 @@
 {
     "java.project.sourcePaths": [
+        "3-FastAndSlowPointers",
         "2-TwoPointers",
-        "3-FastAndSlowPointers"
+        "4-MergeIntervals"
     ]
 }
