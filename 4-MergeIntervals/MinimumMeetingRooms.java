@@ -1,5 +1,7 @@
 import java.util.*;
 
+import org.graalvm.compiler.nodes.calc.IntegerDivRemNode;
+
 class Meeting{
     int start;
     int end;
@@ -38,6 +40,25 @@ class MinimumMeetingRooms{
             }
         }
         return roomsNeeded;
+    }
+
+    public static int findMinRooms(List<Meeting> meetings){
+      if(meetings == null || meetings.size() == 0)
+        return 0;
+      
+      Collections.sort(meetings,(a,b)->Integer.compare(a.start, b.start));
+
+      
+      PriorityQueue<Meeting> minHeap = new PriorityQueue<>(meetings.size(), (a, b) -> Integer.compare((a.end), b.end));
+
+      for(Meeting meeting : meetings){
+        while(!minHeap.isEmpty() && meeting.start >= minHeap.peek().end){ //this  condition checks if the meeting has ended. 
+          minHeap.poll(); //if condition is true, remove the meeting
+        }
+        // now all the meetings in the minheap are now active.
+        minHeap.offer(meeting);
+      }
+      return minHeap.size();
     }
 
     public static void main(String[] args) {
