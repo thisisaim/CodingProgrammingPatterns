@@ -30,6 +30,5 @@ class FindCorruptNums{
         
         nums = FindCorruptNums.findNumbers(new int[] { 3, 1, 2, 3, 6, 4 });
         System.out.println(nums[0] + ", " + nums[1]);
-        
     }
 }
