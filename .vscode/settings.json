@@ -5,6 +5,7 @@
         "4-MergeIntervals",
         "3-FastAndSlowPointers",
         "2-TwoPointers",
-        "1-SlidingWindow"
+        "1-SlidingWindow",
+        "7-BFS"
     ]
 }
