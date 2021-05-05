@@ -1,8 +1,10 @@
 {
     "java.project.sourcePaths": [
+        "6-InPlaceReversalOfALinkedList",
+        "5-CyclicSort",
         "4-MergeIntervals",
         "3-FastAndSlowPointers",
         "2-TwoPointers",
-        "5-CyclicSort"
+        "1-SlidingWindow"
     ]
 }
