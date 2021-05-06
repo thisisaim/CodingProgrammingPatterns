@@ -24,14 +24,18 @@ class LevelOrderTraversal {
       List<Integer> currentLevel = new ArrayList<>(levelSize);
 
       for(int i = 0; i < levelSize; i++){
+
         TreeNode currentNode = q.poll();
         currentLevel.add(currentNode.val);
+        
         if(currentNode.left != null){
           q.offer(currentNode.left);
         }
+        
         if(currentNode.right != null){
           q.offer(currentNode.right);
         }
+        
         result.add(currentLevel);
       }
     }
