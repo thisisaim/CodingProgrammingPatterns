@@ -21,7 +21,7 @@ class MinimumBinaryTreeDepth{
         Queue<TreeNode> q = new LinkedList<>();
         q.offer(root);
 
-        while(!q.isEmpty()){
+        while(!q.isEmpty()){ 
             result++;
 
             int levelSize = q.size();
