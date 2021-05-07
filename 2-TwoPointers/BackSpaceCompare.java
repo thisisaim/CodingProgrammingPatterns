@@ -40,7 +40,7 @@ class BackSpaceCompare{
         return index;
     }
 
-    public private static void main(String[] args) {
+    public static void main(String[] args) {
         System.out.println(BackSpaceCompare.compare("xy#z", "xzz#"));
         System.out.println(BackSpaceCompare.compare("xy#z", "xyz#"));
         System.out.println(BackSpaceCompare.compare("xp#", "xyz##"));    
