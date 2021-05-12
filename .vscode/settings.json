@@ -1,5 +1,6 @@
 {
     "java.project.sourcePaths": [
+        "8-DFS",
         "7-BFS",
         "6-InPlaceReversalOfALinkedList",
         "5-CyclicSort",
@@ -7,6 +8,6 @@
         "3-FastAndSlowPointers",
         "2-TwoPointers",
         "1-SlidingWindow",
-        "8-DFS"
+        "9-TwoHeaps"
     ]
 }
