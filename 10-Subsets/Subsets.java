@@ -27,3 +27,7 @@ class Subsets {
     System.out.println("Here is the list of subsets: " + result);
   }
 }
+
+// time complexity of the above algorithm will be O(N*2^N)
+// space O(N x 2^N)
+​​
