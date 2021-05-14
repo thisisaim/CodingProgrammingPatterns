@@ -28,6 +28,5 @@ class Subsets {
   }
 }
 
-// time complexity of the above algorithm will be O(N*2^N)
-// space O(N x 2^N)
-​​
+// Time O(n * 2^n)
+// Space O(n * 2^n)
