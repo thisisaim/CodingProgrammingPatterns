@@ -13,9 +13,9 @@ class ConnectRopes {
     // keep doing this until the heap is left with only one rope
     int result = 0, temp = 0;
     while (minHeap.size() > 1) {
-      temp = minHeap.poll() + minHeap.poll();
-      result += temp;
-      minHeap.add(temp);
+        temp = minHeap.poll() + minHeap.poll();
+        result += temp;
+        minHeap.add(temp);
     }
 
     return result;
