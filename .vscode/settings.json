@@ -8,7 +8,8 @@
         "4-MergeIntervals",
         "3-FastAndSlowPointers",
         "2-TwoPointers",
+        "10-Subsets",
         "1-SlidingWindow",
-        "10-Subsets"
+        "11-ModifiedBinarySearch"
     ]
 }
