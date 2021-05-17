@@ -1,9 +1,8 @@
-import java.util.List;
-import java.util.PriorityQueue;
+import java.util.*;
 
 class KLargestNumbers{
     public static List<Integer> FindKLargestNumbers(int[] nums, int k){
-        PriorityQueue<Integer> minHeap = new PriorityQueue<Integer>(a, b) -> (a[0] - b[0]);
+        PriorityQueue<Integer> minHeap = new PriorityQueue<Integer>((a, b) -> a - b);
         
         //Load all the numbers in nums into minHeap
         for(int i = 0; i < k; i++){

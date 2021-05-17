@@ -8,8 +8,10 @@
         "4-MergeIntervals",
         "3-FastAndSlowPointers",
         "2-TwoPointers",
+        "14-KWayMerge",
+        "11-ModifiedBinarySearch",
         "10-Subsets",
         "1-SlidingWindow",
-        "11-ModifiedBinarySearch"
+        "13-TopKElements"
     ]
 }
