@@ -11,7 +11,8 @@ class ConnectRopes {
     // go through the values of the heap, in each step take top (lowest) rope lengths from the min heap
     // connect them and push the result back to the min heap. 
     // keep doing this until the heap is left with only one rope
-    int result = 0, temp = 0;
+    int result = 0;
+    int temp = 0;
     while (minHeap.size() > 1) {
         temp = minHeap.poll() + minHeap.poll();
         result += temp;
