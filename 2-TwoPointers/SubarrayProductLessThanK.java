@@ -7,8 +7,9 @@ class SubarrayProductLessThanK{
       int left = 0;
       for (int right = 0; right < arr.length; right++) {
         product *= arr[right];
-        while (product >= target && left < arr.length)
+        while (product >= target && left < arr.length){
           product /= arr[left++];
+        }
           
           List<Integer> tempList = new LinkedList<>();
           for (int i = right; i >= left; i--) {
