@@ -54,11 +54,9 @@ class StringPermutation {
                     matched++;
                 }
             }
-            
             if(matched == map.size()) {
                 return true;
             }
-    
             if(right >= pattern.length() - 1) {
                 char leftChar = str.charAt(left);
                 if(map.containsKey(leftChar)) {
