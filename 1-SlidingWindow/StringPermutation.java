@@ -35,38 +35,36 @@ Explanation: The string contains "acb" which is a permutation of the given patte
 */
 
 
+
 class StringPermutation {
     public static boolean findPermutation(String str, String pattern){
-        int windowStart = 0;
+        int left = 0;
         int matched = 0;
+        Map<Character, Integer> map = new HashMap<>();
 
-        Map<Character, Integer> freqMap = new HashMap<>();
-
-        for(char c : pattern.toCharArray()){
-            freqMap.put(c, freqMap.getOrDefault(c, 0) + 1);
+        for(char c : str.toCharArray()) {
+            map.put(c, map.getOrDefault(c, 0) + 1);
         }
 
-        for(int windowEnd = 0; windowEnd < str.length(); windowEnd++){
-            char rightChar = str.charAt(windowEnd);
-            if(freqMap.containsKey(rightChar)){
-                freqMap.put(rightChar, freqMap.get(rightChar) - 1);
-                if(freqMap.get(rightChar) == 0){
-                    matched++;
-                }
+        for(int right = 0; right < str.length(); right++) {
+            char rightChar = str.charAt(right);
+            if(map.containsKey(rightChar)) {
+                map.put(rightChar, map.get(rightChar) - 1);
             }
-            
-            if(matched == freqMap.size()){
+            if(map.get(rightChar) == 0) {
+                matched++;
+            }
+            if(matched == map.size()) {
                 return true;
             }
-
-            if(windowEnd >= pattern.length() - 1){
-                char leftChar = str.charAt(windowStart);
-                if(freqMap.containsKey(leftChar)){
-                    if(freqMap.get(leftChar) == 0){
+            if(right >= pattern.length() - 1) {
+                char leftChar = str.charAt(left++);
+                if(map.containsKey(leftChar)) {
+                    if(map.get(leftChar) == 0) {
                         matched--;
                     }
-                    freqMap.put(leftChar, freqMap.get(leftChar) +1);
-                }
+                    map.put(leftChar, map.get(leftChar) + 1);
+                }        
             }
         }
         return false;
