@@ -42,29 +42,32 @@ class StringPermutation {
         int matched = 0;
         Map<Character, Integer> map = new HashMap<>();
 
-        for(char c : str.toCharArray()) {
+        for(char c : pattern.toCharArray()) {
             map.put(c, map.getOrDefault(c, 0) + 1);
         }
 
         for(int right = 0; right < str.length(); right++) {
             char rightChar = str.charAt(right);
-            if(map.containsKey(rightChar)) {
+            if(map.containsKey(rightChar)){
                 map.put(rightChar, map.get(rightChar) - 1);
+                if(map.get(rightChar) == 0) {
+                    matched++;
+                }
             }
-            if(map.get(rightChar) == 0) {
-                matched++;
-            }
+            
             if(matched == map.size()) {
                 return true;
             }
+    
             if(right >= pattern.length() - 1) {
-                char leftChar = str.charAt(left++);
+                char leftChar = str.charAt(left);
                 if(map.containsKey(leftChar)) {
                     if(map.get(leftChar) == 0) {
                         matched--;
                     }
                     map.put(leftChar, map.get(leftChar) + 1);
-                }        
+                }
+                left++;
             }
         }
         return false;
