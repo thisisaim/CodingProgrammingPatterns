@@ -12,7 +12,7 @@ class SortedArraySquares{
             }
             else{
                 result[j] = arr[right] * arr[right];
-                right++;
+                right--;
             }
         }
         return result;
