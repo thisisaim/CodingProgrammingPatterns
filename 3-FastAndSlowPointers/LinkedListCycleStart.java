@@ -47,15 +47,14 @@ class LinkedListCycleStart {
         ListNode current = slow;
         int cycleLength = 0;
         do {
-          current = current.next;
-          cycleLength++;
+            current = current.next;
+            cycleLength++;
         } while (current != slow);
         
         return cycleLength;
-      }
+    }
 
-      
-      public static void main(String[] args) {
+    public static void main(String[] args) {
         ListNode head = new ListNode(1);
         head.next = new ListNode(2);
         head.next.next = new ListNode(3);
@@ -71,6 +70,6 @@ class LinkedListCycleStart {
     
         head.next.next.next.next.next.next = head;
         System.out.println("LinkedList cycle start: " + LinkedListCycleStart.findCycleStart(head).value);
-      }
+    }
     
 }

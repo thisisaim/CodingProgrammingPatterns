@@ -27,7 +27,7 @@ import java.util.*;
 
 class StringAnagrams{
     public static List<Integer> findStringAnagrams(String str, String pattern) {
-        int windowStart = 0;
+        int left = 0;
         int matched = 0;
         
         Map<Character, Integer> freqMap = new HashMap<>();
@@ -36,10 +36,10 @@ class StringAnagrams{
             freqMap.put(c, freqMap.getOrDefault(c, 0) + 1);
         }
 
-        List<Integer> result = new ArrayList<Integer>();
+        List<Integer> result = new ArrayList<>();
 
-        for(int windowEnd = 0; windowEnd < str.length(); windowEnd++){
-            char rightChar = str.charAt(windowEnd);
+        for(int right = 0; right < str.length(); right++){
+            char rightChar = str.charAt(right);
 
             if(freqMap.containsKey(rightChar)){
                 freqMap.put(rightChar, freqMap.get(rightChar) - 1);
@@ -48,17 +48,18 @@ class StringAnagrams{
                 }
             }
             if(matched == freqMap.size()){
-                result.add(windowStart);
+                result.add(left);
             }
             
-            if (windowEnd >= pattern.length() - 1) { // shrink the window
-            char leftChar = str.charAt(windowStart++);
+            if (right >= pattern.length() - 1) { // shrink the window
+            char leftChar = str.charAt(left);
             if (freqMap.containsKey(leftChar)) {
                 if (freqMap.get(leftChar) == 0)
                     matched--; // before putting the character back, decrement the matched count
                     // put the character back
                     freqMap.put(leftChar, freqMap.get(leftChar) + 1);
                 }
+                left++;
             }
         }
         return result;

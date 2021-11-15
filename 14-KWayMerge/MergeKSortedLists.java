@@ -9,12 +9,21 @@ class ListNode {
     }
 }
 
+<<<<<<< HEAD
 class MergeKSortedLists {
     public static ListNode merge(ListNode[] lists) {
         PriorityQueue<ListNode> minHeap = new PriorityQueue<ListNode>((a, b) -> a.value - b.value);
 
         for(ListNode list : lists) {
             if(list != null) {
+=======
+class MergeKSortedLists{
+    public static ListNode merge(ListNode[] lists){
+        PriorityQueue<ListNode> minHeap = new PriorityQueue<ListNode>((a, b) -> a.value - b.value);
+
+        for(ListNode list : lists){
+            while(list != null){
+>>>>>>> eb7b7824191e1036029fa88c53710fef657eeaa7
                 minHeap.add(list);
             }
         }

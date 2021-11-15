@@ -3,9 +3,9 @@ import java.util.*;
 class SmallestWindowContainingSubstring{
 
     public static String findSubstring(String str, String pattern){
-        int windowStart = 0;
+        int left = 0;
         int matched = 0;
-        int minLength = str.length() + 1;
+        int minLen = str.length() + 1;
         int subStrStart = 0;
 
         Map<Character, Integer> freqMap = new HashMap<>();
@@ -14,8 +14,8 @@ class SmallestWindowContainingSubstring{
             freqMap.put(c, freqMap.getOrDefault(c, 0) + 1);
         }
         
-        for(int windowEnd = 0; windowEnd < str.length(); windowEnd++){
-            char rightChar  = str.charAt(windowEnd);
+        for(int right = 0; right < str.length(); right++){
+            char rightChar  = str.charAt(right);
 
             if(freqMap.containsKey(rightChar)){
                 freqMap.put(rightChar, freqMap.get(rightChar) - 1);
@@ -24,21 +24,23 @@ class SmallestWindowContainingSubstring{
                 }
             }
             while(matched == pattern.length()){
-                if(minLength > windowEnd - windowStart + 1){
-                    minLength = windowEnd - windowStart + 1;
-                    subStrStart = windowStart;
+                if(minLen > right - left + 1){
+                    minLen = right - left + 1;
+                    subStrStart = left;
                 }
             }
 
-            char charLeft = str.charAt(windowStart++);
+            char charLeft = str.charAt(left);
             if(freqMap.containsKey(charLeft)){
                 if(freqMap.get(charLeft) == 0){
                     matched--;
                 }
                 freqMap.put(charLeft, freqMap.get(charLeft) + 1);
             }
+            left++;
+
         }
-        return minLength > str.length() ? "" : str.substring(subStrStart, subStrStart + minLength);
+        return minLen > str.length() ? "" : str.substring(subStrStart, subStrStart + minLen);
 
     }
     public static void main(String[] args) {

@@ -1,17 +1,18 @@
 {
-    "java.project.sourcePaths": [
-        "9-TwoHeaps",
-        "8-DFS",
-        "7-BFS",
-        "6-InPlaceReversalOfALinkedList",
-        "5-CyclicSort",
-        "4-MergeIntervals",
-        "3-FastAndSlowPointers",
-        "2-TwoPointers",
-        "14-KWayMerge",
-        "11-ModifiedBinarySearch",
-        "10-Subsets",
-        "1-SlidingWindow",
-        "13-TopKElements"
-    ]
+  "java.project.sourcePaths": [
+    "9-TwoHeaps",
+    "8-DFS",
+    "7-BFS",
+    "6-InPlaceReversalOfALinkedList",
+    "5-CyclicSort",
+    "4-MergeIntervals",
+    "3-FastAndSlowPointers",
+    "2-TwoPointers",
+    "14-KWayMerge",
+    "13-TopKElements",
+    "11-ModifiedBinarySearch",
+    "10-Subsets",
+    "1-SlidingWindow",
+    "16-TopologicalSort"
+  ]
 }

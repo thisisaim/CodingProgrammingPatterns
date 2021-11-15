@@ -13,17 +13,18 @@ Explanation: Subarray with maximum sum is [3, 4].
 
 class MaximumSumSubArrayOfSizeK{
     public static int MaxSumSubArray(int[] arr, int k){
+        int left = 0;
+        int sum = 0;
         int maxSum = 0;
-        int windowSum =0;
-        int start = 0;
 
-        for(int end = 0; end < arr.length; end++){
-            windowSum = windowSum + arr[end];
-            if(windowSum >= k -1){
-                maxSum = Math.max(maxSum, windowSum);
-                windowSum = windowSum - arr[start];
-                start++;
+        for(int right = 0; right < arr.length; right++) {
+            sum = sum + arr[right];
+            if(right >= k - 1) {
+                maxSum = Math.max(sum, maxSum);
+                sum = sum - arr[left];
+                left++;
             }
+
         }
         return maxSum;
     }

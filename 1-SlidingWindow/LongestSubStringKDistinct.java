@@ -2,30 +2,31 @@ import java.util.*;
 
 class LongestSubStringKDistinct{
     public static int findLength(String str, int k) {
-        if(str.length() == 0 || str == null || str.length() < k){
+        if(str.length() == 0 || str == null) {
             return -1;
         }
-        int windowStart = 0;
-        int maxLength = 0;
-        int windowEnd;
+
+        int left = 0;
+        int maxLen = 0;
 
         Map<Character, Integer> freqMap = new HashMap<>();
 
-        for(windowEnd = 0; windowEnd < str.length(); windowEnd++){
-            char rightChar = str.charAt(windowEnd);
+        for(int right = 0; right < str.length(); right++) {
+            char rightChar = str.charAt(right);
             freqMap.put(rightChar, freqMap.getOrDefault(rightChar, 0) + 1);
 
-            while(freqMap.size() > k){
-                char leftChar = str.charAt(windowStart);
-                freqMap.put(leftChar, freqMap.get(leftChar) - 1);
-                if(freqMap.get(leftChar) == 0){
+            while(freqMap.size() > k) {
+                char leftChar = str.charAt(left);
+                freqMap.put(leftChar, freqMap.getOrDefault(leftChar, 0) - 1);
+                if(freqMap.get(leftChar) == 0) {
                     freqMap.remove(leftChar);
                 }
-                windowStart++;
+                left++;
             }
-            maxLength = Math.max(maxLength, windowEnd - windowStart + 1);
+            maxLen = Math.max(maxLen, right - left + 1);
         }
-         return maxLength;
+
+        return maxLen;
     }
 
     public static void main(String[] args) {

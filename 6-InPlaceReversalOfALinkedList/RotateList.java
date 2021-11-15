@@ -1,4 +1,4 @@
-import java.*;
+import java.util.*;
 
 class ListNode{
     int value = 0;
