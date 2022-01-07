@@ -13,7 +13,7 @@ class TaskScheduling {
         // initialze indegree and  adjacency list
         for(int i = 0; i < tasks; i++) {
             indegree.put(i, 0);
-            adjList.put(i, new ArrayList<Integer>());
+            adjList.put(i, new ArrayList<>());
         }
 
         //build the graph
