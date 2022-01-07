@@ -23,17 +23,20 @@ class TaskScheduling {
             adjList.get(parent).add(child);
             indegree.put(child, indegree.get(child )+ 1);
         }
+
+        // find all sources i.e., all vertices with 0 in-degrees
         Queue<Integer> q = new LinkedList<>();
         for(Map.Entry<Integer, Integer> entry : indegree.entrySet()) {
             if(entry.getValue() == 0) {
                 q.add(entry.getKey());
             }
         }
-
+        // d. For each source, add it to the sortedOrder and subtract one from all of its children's in-degrees
+        // if a child's in-degree becomes zero, add it to the sources queue
         while(!q.isEmpty()) {
             int vertex = q.poll();
             sortedOrder.add(vertex);
-            List<Integer> children = adjList.get(vertex);
+            List<Integer> children = adjList.get(vertex);// get the node's children to decrement their in-degrees
             for(int child : children) {
                 indegree.put(child, indegree.get(child) - 1);
                 if(indegree.get(child) == 0) {
@@ -41,6 +44,8 @@ class TaskScheduling {
                 }
             }
         }
+        // if sortedOrder doesn't contain all tasks, there is a cyclic dependency between tasks, therefore, we
+        // will not be able to schedule all tasks
         return sortedOrder.size() == tasks;
     }
     public static void main(String[] args) {
