@@ -8,10 +8,10 @@ class TopologicalSort {
 
     // a. Initialize the graph
     HashMap<Integer, Integer> inDegree = new HashMap<>(); // count of incoming edges for every vertex
-    HashMap<Integer, List<Integer>> graph = new HashMap<>(); // adjacency list graph
+    HashMap<Integer, List<Integer>> adjList = new HashMap<>(); // adjacency list graph
     for (int i = 0; i < vertices; i++) {
       inDegree.put(i, 0);
-      graph.put(i, new ArrayList<Integer>());
+      adjList.put(i, new ArrayList<Integer>());
     }
 
     // b. Build the graph
@@ -19,7 +19,7 @@ class TopologicalSort {
       int parent = edges[i][0];
       int child = edges[i][1];
       
-      graph.get(parent).add(child); // put the child into it's parent's list
+      adjList.get(parent).add(child); // put the child into it's parent's list
       inDegree.put(child, inDegree.get(child) + 1); // increment child's inDegree
     }
 
@@ -36,7 +36,7 @@ class TopologicalSort {
     while (!sources.isEmpty()) {
       int vertex = sources.poll();
       sortedOrder.add(vertex);
-      List<Integer> children = graph.get(vertex); // get the node's children to decrement their in-degrees
+      List<Integer> children = adjList.get(vertex); // get the node's children to decrement their in-degrees
       for (int child : children) {
         inDegree.put(child, inDegree.get(child) - 1);
         if (inDegree.get(child) == 0){
