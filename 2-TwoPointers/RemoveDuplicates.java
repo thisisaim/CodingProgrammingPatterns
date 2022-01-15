@@ -19,5 +19,8 @@ class RemoveDuplicates{
 
         int[] test2 = new int[] { 2, 2, 2, 11 };
         System.out.println(RemoveDuplicates.remove(test2));   
+        
+        int[] test3 = new int[] { 1, 2, 3, 4 };
+        System.out.println(RemoveDuplicates.remove(test3));
     }
 }
