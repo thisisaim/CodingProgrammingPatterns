@@ -18,7 +18,9 @@ class TripletsSumCloseToTarget{
                 if(targetDiff == 0){
                     return targetSum = targetDiff;
                 }
-                if(Math.abs(targetDiff) < Math.abs(smallestDiff) || (Math.abs(targetDiff) == Math.abs(smallestDiff) && targetDiff > smallestDiff)){
+                if(Math.abs(targetDiff) < Math.abs(smallestDiff) || 
+                (Math.abs(targetDiff) == Math.abs(smallestDiff) && targetDiff > smallestDiff))
+                {
                     smallestDiff = targetDiff;
                 }
                 if(targetDiff > 0){
