@@ -1,15 +1,5 @@
 import java.util.*;
 
-class TreeNode{
-    int val;
-    TreeNode left;
-    TreeNode right;
-
-    TreeNode(int x){
-        val = x;
-    }
-};
-
 class ReverseLevelOrderTraversal{
     public static List<List<Integer>> traverse(TreeNode root){
         List<List<Integer>> result = new LinkedList<List<Integer>>();
@@ -51,6 +41,6 @@ class ReverseLevelOrderTraversal{
         root.right.right = new TreeNode(5);
         List<List<Integer>> result = ReverseLevelOrderTraversal.traverse(root);
         System.out.println("Reverse level order traversal: " + result);
-      }
+    }
 
 }
