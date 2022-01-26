@@ -13,32 +13,26 @@ class TreeNode {
 class LevelOrderTraversal {
   public static List<List<Integer>> traverse(TreeNode root) {
     List<List<Integer>> result = new ArrayList<List<Integer>>();
-    if(root == null){
-      return result; 
-    }
-    Queue<TreeNode> q = new LinkedList<>();
-    q.offer(root);
+    if (root == null) return result;
 
-    while(!q.isEmpty()){
-      int levelSize = q.size();
+    Queue<TreeNode> queue = new LinkedList<>();
+    queue.offer(root);
+    while (!queue.isEmpty()) {
+      int levelSize = queue.size();
       List<Integer> currentLevel = new ArrayList<>(levelSize);
+      
+      for (int i = 0; i < levelSize; i++) {
+        TreeNode current = queue.poll();
+        // add the node to the current level
+        currentLevel.add(current.val);
+        // insert the children of current node in the queue
+        if (current.left != null) queue.offer(current.left);
 
-      for(int i = 0; i < levelSize; i++){
-
-        TreeNode currentNode = q.poll();
-        currentLevel.add(currentNode.val);
-        
-        if(currentNode.left != null){
-          q.offer(currentNode.left);
-        }
-        
-        if(currentNode.right != null){
-          q.offer(currentNode.right);
-        }
-        
-        result.add(currentLevel);
+        if (current.right != null) queue.offer(current.right);
       }
+      result.add(currentLevel);
     }
+
     return result;
   }
 //Time Complexity O(n)
